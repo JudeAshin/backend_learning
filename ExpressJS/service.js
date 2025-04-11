@@ -1,4 +1,4 @@
-exports.isPalindrome = async (str) => {
+export async function isPalindrome(str) {
     const lowerCaseStr = str.toLowerCase();
     const cleanStr = lowerCaseStr.replace(/[^a-z0-9]/g, '');
     let left = 0;
@@ -11,4 +11,11 @@ exports.isPalindrome = async (str) => {
         right--;
     }
     return true;
+}
+
+export async function reverseString(str) {
+    const strArr = str.split('');
+    const revArr = strArr.reverse();
+    const result = revArr.join('');
+    return result
 }

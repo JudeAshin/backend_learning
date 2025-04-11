@@ -4,5 +4,6 @@ const controller = require('./controller');
 const router = express.Router();
 
 router.get('/palindrome/:word', controller.isPalindrome);
+router.get('/reverse/:word', controller.reverse);
 
 module.exports = router;

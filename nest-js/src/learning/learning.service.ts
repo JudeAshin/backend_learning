@@ -22,4 +22,11 @@ export class LearningService {
             throw error
         }
     }
+
+    async reverseString(str: string): Promise<string> {
+        const strArr = str.split('');
+        const revArr = strArr.reverse();
+        const result = revArr.join('')
+        return result
+    }
 }

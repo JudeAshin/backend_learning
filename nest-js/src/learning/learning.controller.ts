@@ -13,4 +13,10 @@ export class LearningController {
         }
         return { success: true, message: `Fetched palindrome for word : ${word}. It's a palindrome`, isPalindrome: result };
     }
+
+    @Get('reverse/:word')
+    async reverse(@Param('word') word: string): Promise<{ success: boolean; message: string; response: string }> {
+        const result = await this.service.reverseString(word); // Use the injected service
+        return { success: true, message: `Reversed word fetched successfully for the word: ${word}. It is `, response: result };
+    }
 }
