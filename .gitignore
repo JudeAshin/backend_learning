@@ -1,0 +1,18 @@
+# Ignore everything
+*
+
+# But allow .gitignore itself
+!.gitignore
+
+# Allow express-app package.json and index.js
+!ExpressJS/
+ExpressJS/*
+!ExpressJS/package.json
+!ExpressJS/app.js
+
+# Allow nest-app package.json and src folder
+!nest-app/
+nest-app/*
+!nest-app/package.json
+!nest-app/src/
+nest-app/src/**
