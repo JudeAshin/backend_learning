@@ -9,6 +9,11 @@
 ExpressJS/*
 !ExpressJS/package.json
 !ExpressJS/app.js
+!ExpressJS/routes.js
+!ExpressJS/controller.js
+!ExpressJS/service.js
+!ExpressJS/logger.js
+
 
 # Allow NestJS package.json and src folder
 !nest-js/
