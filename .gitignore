@@ -10,9 +10,8 @@ ExpressJS/*
 !ExpressJS/package.json
 !ExpressJS/app.js
 
-# Allow nest-app package.json and src folder
-!nest-app/
-nest-app/*
-!nest-app/package.json
-!nest-app/src/
-nest-app/src/**
+# Allow NestJS package.json and src folder
+!nest-js/
+!nest-js/package.json
+!nest-js/src/
+!nest-js/src/**
