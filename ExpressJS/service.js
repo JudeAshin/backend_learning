@@ -19,3 +19,11 @@ export async function reverseString(str) {
     const result = revArr.join('');
     return result
 }
+
+export async function sumOfArray(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+    return sum;
+};

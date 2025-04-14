@@ -52,3 +52,27 @@ exports.reverse = async (req, res) => {
         });
     }
 };
+
+exports.sumOfArray = async (req, res) => {
+    const numbers = req.body.numbers;
+    try {
+        if (!Array.isArray(numbers)) {
+            return res.status(400).json({ error: 'Invalid input. Please provide an array of numbers in the "numbers" field.' });
+        }
+        const result = await service.sumOfArray(numbers);
+        logger.info(`Fetched sum for the array: ${numbers} is ${result}`); // Corrected log message
+
+        res.status(200).json({
+            success: true,
+            message: `Sum of the array of ${numbers} is : ${result}`, // Corrected message
+            data: result,
+        });
+    } catch (error) {
+        logger.error("Error calculating sum of array", error); // Corrected log message
+        res.status(500).json({
+            success: false,
+            message: `Failed to calculate sum of the array. Error: ${error.message}`, // Include the error
+            data: null,
+        });
+    }
+};

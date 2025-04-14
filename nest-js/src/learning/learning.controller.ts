@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { LearningService } from './learning.service';
 
 @Controller('learning')
@@ -18,5 +18,11 @@ export class LearningController {
     async reverse(@Param('word') word: string): Promise<{ success: boolean; message: string; response: string }> {
         const result = await this.service.reverseString(word); // Use the injected service
         return { success: true, message: `Reversed word fetched successfully for the word: ${word}. It is `, response: result };
+    }
+
+    @Post('/sumOfArray')
+    async sumOfArray(@Body('numbers') numbers: number[]): Promise<any> {
+        const result = await this.service.sumOfArray(numbers);
+        return { success: true, message: `Sum of the array of ${numbers} is : ${result} `, response: result };
     }
 }

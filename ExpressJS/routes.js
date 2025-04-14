@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.get('/palindrome/:word', controller.isPalindrome);
 router.get('/reverse/:word', controller.reverse);
+router.post('/sumOfArray', controller.sumOfArray);
 
 module.exports = router;
