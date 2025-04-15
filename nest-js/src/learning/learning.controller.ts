@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { LearningService } from './learning.service';
+import { response } from 'express';
 
 @Controller('learning')
 export class LearningController {
@@ -24,5 +25,11 @@ export class LearningController {
     async sumOfArray(@Body('numbers') numbers: number[]): Promise<any> {
         const result = await this.service.sumOfArray(numbers);
         return { success: true, message: `Sum of the array of ${numbers} is : ${result} `, response: result };
+    }
+
+    @Post('/maxNumber')
+    async maxNumber(@Body('numbers') numbers: number[]): Promise<any> {
+        const result = await this.service.maxNumber(numbers);
+        return { success: true, message: `Maximimum number in the arrayt of ${numbers} is ${result} `, response: result }
     }
 }

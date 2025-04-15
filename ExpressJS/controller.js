@@ -76,3 +76,27 @@ exports.sumOfArray = async (req, res) => {
         });
     }
 };
+
+exports.maxNoArray = async (req, res) => {
+    const numbers = req.body.numbers;
+    try {
+        if (!Array.isArray(numbers)) {
+            return res.status(400).json({ error: 'Invalid input. Please provide an array of numbers in the "numbers" field.' });
+        }
+        const result = await service.maxNoArray(numbers);
+        logger.info(`Fetched the maximum number in the array: ${numbers} is ${result}`); // Corrected log message
+
+        res.status(200).json({
+            success: true,
+            message: `Maximum number in the array of ${numbers} is : ${result}`, // Corrected message
+            data: result,
+        });
+    } catch (errror) {
+        logger.error("Error calculating maximum number in array", errror); // Corrected log message
+        res.status(500).json({
+            success: false,
+            message: `Failed to find the maximim number in the array. Error: ${errror.message}`, // Include the error
+            data: null,
+        });
+    }
+}

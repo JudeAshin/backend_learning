@@ -27,3 +27,15 @@ export async function sumOfArray(array) {
     }
     return sum;
 };
+
+export async function maxNoArray(array) {
+    let max = array[0];
+    for (let i = 0; i < array.length; i++) {
+        if (max < array[i]) {
+            max = array[i]
+        }
+    }
+    const maximum = Math.max(...array)                   //This is a build in function to find the maximum in a array.
+    return max
+
+}
