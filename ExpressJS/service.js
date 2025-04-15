@@ -37,5 +37,16 @@ export async function maxNoArray(array) {
     }
     const maximum = Math.max(...array)                   //This is a build in function to find the maximum in a array.
     return max
+}
 
+export async function vowelCount(string) {
+    const newStr = string.toLowerCase();
+    let count = 0;
+    const vowel = ['a', 'e', 'i', 'o', 'u']
+    for (let i = 0; i < newStr.length; i++) {
+        if (vowel.includes(newStr[i])) {
+            count++
+        }
+    }
+    return count
 }

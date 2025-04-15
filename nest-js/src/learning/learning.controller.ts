@@ -32,4 +32,12 @@ export class LearningController {
         const result = await this.service.maxNumber(numbers);
         return { success: true, message: `Maximimum number in the arrayt of ${numbers} is ${result} `, response: result }
     }
+
+    @Get('/vowelCount/:word')
+    async vowelCount(@Param('word') word: string): Promise<any> {
+        const result = await this.service.vowelCount(word);
+        return {
+            success: true, message: `Number of vowels in the word ${word} is ${result},`, response: result
+        }
+    }
 }

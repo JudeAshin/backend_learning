@@ -100,3 +100,25 @@ exports.maxNoArray = async (req, res) => {
         });
     }
 }
+
+exports.vowelCount = async (req, res) => {
+    const word = req.params.word;
+
+    try {
+        const result = await service.vowelCount(word);
+        logger.info(`Fetched vowel count  for the word : ${word}`, result);
+
+        res.status(200).json({
+            success: true,
+            message: `Fetched vowel count for the word : ${word}. It's ${result}`,
+            data: result,
+        });
+    } catch (error) {
+        logger.error("Error fetching vowel count for the word", error);
+        res.status(500).json({
+            success: false,
+            message: `Failed to fetch vowel count for word : ${word}`,
+            data: result,
+        });
+    }
+};

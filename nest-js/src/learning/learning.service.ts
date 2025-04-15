@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { count } from 'console';
 
 @Injectable()
 export class LearningService {
@@ -46,5 +47,17 @@ export class LearningService {
             }
         }
         return max
+    }
+
+    async vowelCount(word: string): Promise<number> {
+        const vowels = ['a', 'e', 'i', 'o', 'u'];
+        let count = 0;
+        const newStr = word.toLocaleLowerCase();
+        for (let i = 0; i < newStr.length; i++) {
+            if (vowels.includes(newStr[i])) {
+                count++
+            }
+        }
+        return count
     }
 }
