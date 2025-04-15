@@ -20,3 +20,4 @@ ExpressJS/*
 !nest-js/package.json
 !nest-js/src/
 !nest-js/src/**
+!nest-js/tsconfig.json
