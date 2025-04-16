@@ -50,3 +50,17 @@ export async function vowelCount(string) {
     }
     return count
 }
+
+export async function removeDuplicate(numbers) {
+    const array = [];
+    const set = new Set();
+
+    for (let i = 0; i < numbers.length; i++) {
+        const element = numbers[i];
+        if (!set.has(element)) {
+            set.add(element);
+            array.push(element);
+        }
+    }
+    return array;
+}

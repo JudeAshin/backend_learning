@@ -40,4 +40,12 @@ export class LearningController {
             success: true, message: `Number of vowels in the word ${word} is ${result},`, response: result
         }
     }
+
+    @Post('/removeDuplicate')
+    async removeDuplicate(@Body('values') values: any[]): Promise<any> {
+        const result = await this.service.removeDuplicate(values);
+        return {
+            success: true, message: `Duplicate among the array ${values} gets removed and the new array is ${result}`, response: result
+        }
+    }
 }

@@ -122,3 +122,21 @@ exports.vowelCount = async (req, res) => {
         });
     }
 };
+
+exports.removeDuplicate = async (req, res) => {
+    const numbers = req.body.numbers;
+    try {
+        const result = await service.removeDuplicate(numbers);
+        logger.info(`Fetched successfully the duplicate in the array : ${numbers}`)
+        res.status(200).json({
+            success: true,
+            message: `Fetched duplicates in the array : ${numbers}. The new array is ${result}`,
+            data: result,
+        });
+    } catch (error) {
+        logger.error("Ërror removing duplicates from the array", error);
+        res.status(500).json({
+            success: false, message: `Failed to remove duplicates from the given array ${numbers}`
+        })
+    }
+}

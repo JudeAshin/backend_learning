@@ -60,4 +60,17 @@ export class LearningService {
         }
         return count
     }
+
+    async removeDuplicate(values: any[]): Promise<any> {
+        const result:any[] = [];
+        const set = new Set();
+        for (let i = 0; i < values.length; i++) {
+            const element = values[i];
+            if (!set.has(element)) {
+                set.add(element);
+                result.push(element);
+            }
+        }
+        return result
+    }
 }

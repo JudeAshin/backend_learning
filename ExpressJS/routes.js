@@ -7,6 +7,7 @@ router.get('/palindrome/:word', controller.isPalindrome);
 router.get('/reverse/:word', controller.reverse);
 router.post('/sumOfArray', controller.sumOfArray);
 router.post('/maxNumber', controller.maxNoArray);
-router.get('/vowelCount/:word', controller.vowelCount)
+router.get('/vowelCount/:word', controller.vowelCount);
+router.post('/removeDuplicate', controller.removeDuplicate);
 
 module.exports = router;
