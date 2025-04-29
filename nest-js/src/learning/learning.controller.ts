@@ -48,4 +48,12 @@ export class LearningController {
             success: true, message: `Duplicate among the array ${values} gets removed and the new array is ${result}`, response: result
         }
     }
+
+    @Get('/firstUniqueCharacter/:word')
+    async firstUniqueCharacter(@Param('word') word: string): Promise<any> {
+        const result = await this.service.firstUniqueCharacter(word);
+        return {
+            success: true, message: `First Unique character in the word ${word} is ${result},`, response: result
+        }
+    }
 }

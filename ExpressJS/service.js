@@ -64,3 +64,19 @@ export async function removeDuplicate(numbers) {
     }
     return array;
 }
+
+export async function firstUniqueCharacter(word) {
+    const charFrequency = {};
+    for (let i = 0; i < word.length; i++) {
+        const char = word[i];
+        charFrequency[char] = (charFrequency[char] || 0) + 1;
+    }
+
+    for (let i = 0; i < word.length; i++) {
+        const char = word[i];
+        if (charFrequency[char] === 1) {
+            return i;
+        }
+    }
+    return -1;
+}

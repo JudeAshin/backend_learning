@@ -140,3 +140,21 @@ exports.removeDuplicate = async (req, res) => {
         })
     }
 }
+
+exports.firstUniqueCharacter = async (req, res) => {
+    const word = req.params.word;
+    try {
+        const result = await service.firstUniqueCharacter(word);
+        logger.info(`Fetched successfully the first unique character in the word : ${word}`)
+        res.status(200).json({
+            success: true,
+            message: `Fetched the first unique character of the word : ${word}. The letter is ${result}`,
+            data: result,
+        });
+    } catch (error) {
+        logger.error("Ërror fetching the unique character in the word", error);
+        res.status(500).json({
+            success: false, message: `Failed to fetch the unique character from the word ${word}`
+        })
+    }
+}

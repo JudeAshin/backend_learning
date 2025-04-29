@@ -62,7 +62,7 @@ export class LearningService {
     }
 
     async removeDuplicate(values: any[]): Promise<any> {
-        const result:any[] = [];
+        const result: any[] = [];
         const set = new Set();
         for (let i = 0; i < values.length; i++) {
             const element = values[i];
@@ -72,5 +72,21 @@ export class LearningService {
             }
         }
         return result
+    }
+
+    async firstUniqueCharacter(word: string): Promise<number> {
+        const charFrequency = {};
+        for (let i = 0; i < word.length; i++) {
+            const char = word[i];
+            charFrequency[char] = (charFrequency[char] || 0) + 1;
+        }
+
+        for (let i = 0; i < word.length; i++) {
+            const char = word[i];
+            if (charFrequency[char] === 1) {
+                return i;
+            }
+        }
+        return -1;
     }
 }

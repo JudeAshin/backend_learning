@@ -9,5 +9,6 @@ router.post('/sumOfArray', controller.sumOfArray);
 router.post('/maxNumber', controller.maxNoArray);
 router.get('/vowelCount/:word', controller.vowelCount);
 router.post('/removeDuplicate', controller.removeDuplicate);
+router.get('/firstUniqueCharacter/:word' , controller.firstUniqueCharacter);
 
 module.exports = router;
