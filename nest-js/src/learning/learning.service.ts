@@ -89,4 +89,14 @@ export class LearningService {
         }
         return -1;
     }
+
+    async titleCase(values: string): Promise<any> {
+        const str = values.split(' ');
+        const newStr = str.map((word) => {
+            const firsLetter = word.charAt(0).toUpperCase()
+            const restOfWord = word.slice(1).toLowerCase()
+            return firsLetter + restOfWord
+        });
+        return newStr.join(' ');
+    }
 }

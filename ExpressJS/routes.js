@@ -10,5 +10,6 @@ router.post('/maxNumber', controller.maxNoArray);
 router.get('/vowelCount/:word', controller.vowelCount);
 router.post('/removeDuplicate', controller.removeDuplicate);
 router.get('/firstUniqueCharacter/:word' , controller.firstUniqueCharacter);
+router.post('/titleCase', controller.titleCase);
 
 module.exports = router;

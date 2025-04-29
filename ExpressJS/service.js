@@ -80,3 +80,14 @@ export async function firstUniqueCharacter(word) {
     }
     return -1;
 }
+
+export async function titleCase(string) {
+    const str = string.split(' ');
+    const newStr = str.map((word) => {
+        const firstLetter = word.charAt(0).toUpperCase();
+        const restOfWord = word.slice(1).toLowerCase();
+        return firstLetter + restOfWord;
+    }
+    );
+    return newStr.join(' ');
+}

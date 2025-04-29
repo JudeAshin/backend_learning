@@ -56,4 +56,12 @@ export class LearningController {
             success: true, message: `First Unique character in the word ${word} is ${result},`, response: result
         }
     }
+
+    @Post('/titleCase')
+    async titleCase(@Body('values') values: string): Promise<any> {
+        const result = await this.service.titleCase(values);
+        return {
+            success: true, message: `Title case of the word ${values} gets changed and the new sentence is ${result}`, response: result
+        }
+    }
 }

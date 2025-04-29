@@ -158,3 +158,21 @@ exports.firstUniqueCharacter = async (req, res) => {
         })
     }
 }
+
+exports.titleCase = async (req, res) => {
+    const words = req.body.words;
+    try {
+        const result = await service.titleCase(words);
+        logger.info(`Fetched successfully the title case in the sentence : ${words}`)
+        res.status(200).json({
+            success: true,
+            message: `Fetched title case in the sentence : ${words}. The new sentence is ${result}`,
+            data: result,
+        });
+    } catch (error) {
+        logger.error("Ërror title case from the sentence", error);
+        res.status(500).json({
+            success: false, message: `Failed to title case from the given sentence ${words}`
+        })
+    }
+}
