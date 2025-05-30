@@ -13,6 +13,7 @@ ExpressJS/*
 !ExpressJS/controller.js
 !ExpressJS/service.js
 !ExpressJS/logger.js
+!ExpressJS/swagger.js
 
 
 # Allow NestJS package.json and src folder
