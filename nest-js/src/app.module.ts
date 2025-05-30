@@ -5,7 +5,7 @@ import { LearningModule } from './learning/learning.module';
 
 @Module({
   imports: [LearningModule],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
